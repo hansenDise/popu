@@ -1,0 +1,94 @@
+{% extends "btresource/base.html" %}
+
+{% block style %}
+		.sperade	{
+			height:10px;
+			
+			margin-top:30px;
+		}
+		.col-lg-1	{
+			width:152px;
+		}
+		thead	{
+			background-color:#742894;
+			color:#fff;
+		}	
+		.pagination	{
+			margin:0 auto;
+			float:right;
+		}
+		.noborder	{
+			border:0;
+		}
+
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<div class="page-header">
+			<hr>
+			<h3>推荐</h3>
+		</div>
+		
+		<table class="table noborder">
+			<tbody>
+				{% for item in hotitems%}
+				<td><img class="img-thumbnail" alt="{{ item.width}}x {{item.height}}" src="{{item.src}}" style="width:103px;height:152px;"> </td> 
+				{% endfor %}
+			</tbody>
+		</table>
+		
+		<div class="sperade"></div>
+		
+		<table class="table table-noborder">
+			<thead>
+				<tr>
+					<th>类别</th>
+					<th>种子</th>
+					<th>加入时间</th>
+					<th>文件大小</th>
+					<th>Seeds</th>
+					<th>Leeders</th>
+					<th>上传者</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item in list %}
+				<tr>
+					<td>{{item.type}}</td>
+					<td>{{item.title}}</td>
+					<td>{{item.addedtime}}</td>
+					<td>{{item.filesize}}</td>
+					<td>{{item.seeds}}</td>
+					<td>{{item.leeders}}</td>
+					<td>{{item.uploader}}</td>
+				</tr>
+				{% endfor %}	
+			</tbody>
+		</table>
+		
+		<nav>
+			<ul class="pagination pagination-lg">
+				<li>
+					<a href="#" aria-label="Previous">
+						<span aria-hidden="true">&laquo</span>
+					</a>
+				</li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li><a href="#">6</a></li>
+				<li><a href="#">7</a></li>
+				<li>
+					<a href="#" aria-label="Next">
+						<span aria-hidden="true">&raquo</span>
+					</a>
+				</li>
+				<li><a href="#">358008</a></li>
+			</ul>
+		</nav>
+	</div>
+	
+{% endblock %}
