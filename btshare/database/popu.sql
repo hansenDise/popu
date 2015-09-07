@@ -21,6 +21,7 @@ languages    		VARCHAR(20),
 runtime 			INT,
 plot				TEXT,
 poster_url  		VARCHAR(200),
+imdb				VARCHAR(100),
 
 PRIMARY KEY(resouceid),
 FOREIGN KEY(resoucetypeid) REFERENCES ResourceType(typeid)
