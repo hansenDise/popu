@@ -1,4 +1,4 @@
-
+/*drop database popu;*/
 create database popu;
 
 use popu;
@@ -12,7 +12,7 @@ PRIMARY KEY(typeid)
 
 /* 资源. 资源描述 */
 create table if not exists Resource(
-resouceid 			INT AUTO_INCREMENT ,
+resourceid 			INT AUTO_INCREMENT ,
 typeid				INT,
 title				VARCHAR(100) NOT NULL,
 cn_title			VARCHAR(150),
@@ -21,30 +21,29 @@ languages    		VARCHAR(20),
 runtime 			INT,
 plot				TEXT,
 poster_url  		VARCHAR(200),
-imdb				VARCHAR(100),
 
-PRIMARY KEY(resouceid),
-FOREIGN KEY(resoucetypeid) REFERENCES ResourceType(typeid)
+PRIMARY KEY(resourceid),
+FOREIGN KEY(typeid) REFERENCES ResourceType(typeid)
 );
 
 /* 资源截屏图片的位置， 如电影，电视剧，游戏的截屏 */
 create table if not exists Screenshot(
 id					INT AUTO_INCREMENT,
-resouceid			INT,
+resourceid			INT,
 screenshot_url 		VARCHAR(200),
 
 PRIMARY KEY(id),
-FOREIGN KEY(resouceid) REFERENCES Resource(resouceid)
+FOREIGN KEY(resourceid) REFERENCES Resource(resourceid)
 );
 
 /* 预告片 */
 create table if not exists Trailer(
 id 					INT AUTO_INCREMENT,
-resouceid			INT,
+resourceid			INT,
 trailer_url			VARCHAR(200),
 
 PRIMARY KEY(id),
-FOREIGN KEY(resouceid) REFERENCES Resource(resouceid)
+FOREIGN KEY(resourceid) REFERENCES Resource(resourceid)
 );
 
 /* 用户表 */
@@ -61,12 +60,12 @@ PRIMARY KEY(userid)
 /* 评论 */
 create table if not exists Comments(
 commentid 			INT AUTO_INCREMENT,
-resouceid			INT,
+resourceid			INT,
 comments			VARCHAR(500),
-userid			BIGINT,
+userid				INT,
 
-PRIMARY KEY(id),
-FOREIGN KEY(resouceid) REFERENCES Resource(resouceid),
+PRIMARY KEY(commentid),
+FOREIGN KEY(resourceid) REFERENCES Resource(resourceid),
 FOREIGN KEY(userid)	REFERENCES Users(userid) 
 );
 
@@ -109,12 +108,13 @@ create table if not exists Torrents(
 torrentid				INT AUTO_INCREMENT,
 resourceid				INT,
 downloadurl				VARCHAR(200),
+magneturl				VARCHAR(400),
 addedtime				datetime,
 userid					int,
 filesize				float,
 
 PRIMARY KEY(torrentid),
-FOREIGN KEY(resourceid) REFERENCES Resource(resouceid),
+FOREIGN KEY(resourceid) REFERENCES Resource(resourceid),
 FOREIGN KEY(userid) REFERENCES Users(userid)
 );
 
@@ -124,7 +124,7 @@ resourceid			INT,
 torrentid			INT,
 
 PRIMARY KEY(res_tor_id),
-FOREIGN KEY(resourceid) REFERENCES Resource(resouceid),
+FOREIGN KEY(resourceid) REFERENCES Resource(resourceid),
 FOREIGN KEY(torrentid) REFERENCES Torrents(torrentid)
 );
 
@@ -154,7 +154,7 @@ resourceid			INT,
 commentid			INT,
 
 PRIMARY KEY(res_com_id),
-FOREIGN KEY(resourceid) REFERENCES Resouce(resouceid),
+FOREIGN KEY(resourceid) REFERENCES Resource(resourceid) ,
 FOREIGN KEY(commentid)  REFERENCES Comments(commentid)
 );
 
