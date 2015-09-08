@@ -10,6 +10,15 @@ descript			VARCHAR(20),
 PRIMARY KEY(typeid)
 );
 
+create table if not exists Category(
+categoryid				INT AUTO_INCREMENT,
+typeid					INT,
+name					VARCHAR(50),
+
+PRIMARY KEY(categoryid),
+FOREIGN KEY(typeid) REFERENCES ResourceType(typeid)
+)
+
 /* 资源. 资源描述 */
 create table if not exists Resource(
 resourceid 			INT AUTO_INCREMENT ,
@@ -20,6 +29,7 @@ release_year		INT,
 languages    		VARCHAR(20),
 runtime 			INT,
 plot				TEXT,
+imdb_url			VARCHAR(100),
 poster_url  		VARCHAR(200),
 hitcount			INT,
 downloadcount		INT,
