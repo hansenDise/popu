@@ -21,6 +21,8 @@ languages    		VARCHAR(20),
 runtime 			INT,
 plot				TEXT,
 poster_url  		VARCHAR(200),
+hitcount			INT,
+downloadcount		INT,
 
 PRIMARY KEY(resourceid),
 FOREIGN KEY(typeid) REFERENCES ResourceType(typeid)
