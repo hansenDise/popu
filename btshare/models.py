@@ -1,9 +1,9 @@
-from django.db import models
+﻿from django.db import models
 
 # Create your models here.
 
 #职业表
-class Occupation(models.Modle):
+class Occupation(models.Model):
 	occupationid = models.AutoField(primary_key=True)
 	occupationname = models.CharField(max_length=20)
 	
@@ -44,9 +44,9 @@ class Movie(models.Model):
 class People(models.Model):
 	peopleid = models.AutoField(primary_key=True)
 	occupationid = models.ForeignKey(Occupation)
-	firstname_en = models.CharField(30)
-	middlename_en = models.CharField(30)
-	lastname_en = models.CharField(30)
+	firstname_en = models.CharField(max_length=30)
+	middlename_en = models.CharField(max_length=30)
+	lastname_en = models.CharField(max_length=30)
 	borndate = models.DateField()
 	summary = models.TextField()
 	
@@ -58,7 +58,9 @@ class Torrent(models.Model):
 	torrentid = models.AutoField(primary_key=True)
 	movieid = models.ForeignKey(Movie)
 	name = models.CharField(max_length=200)
-	filesize = models.CharField(20)
+	torrenturl = models.CharField(max_length=300)
+	magneturl = models.CharField(max_length=300)
+	filesize = models.CharField(max_length=20)
 	addedtime = models.DateTimeField()
 	seeds = models.IntegerField()
 	downloadcount = models.IntegerField()
