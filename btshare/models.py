@@ -7,7 +7,7 @@ class Occupation(models.Model):
 	occupationid = models.AutoField(primary_key=True)
 	occupationname = models.CharField(max_length=20)
 	
-	def __str__(self):
+	def __unicode__(self):
 		return self.occupationname
 	
 	class Meta():
@@ -18,7 +18,7 @@ class Category(models.Model):
 	categoryid = models.AutoField(primary_key=True)
 	categoryname = models.CharField(max_length=50)
 	
-	def __str__(self):
+	def __unicode__(self):
 		return self.categoryname
 	
 	class Meta():
@@ -29,7 +29,7 @@ class Genres(models.Model):
 	genresid = models.AutoField(primary_key=True)
 	genresname = models.CharField(max_length=20)
 	
-	def __str__(self):
+	def __unicode__(self):
 		return self.genresname
 	
 	class Meta():
@@ -46,7 +46,7 @@ class Movie(models.Model):
 	runtime = models.IntegerField()
 	plot = models.TextField()
 	
-	def __str__(self):
+	def __unicode__(self):
 		return self.title
 	
 	class Meta():
@@ -65,7 +65,7 @@ class People(models.Model):
 	borndate = models.DateField()
 	summary = models.TextField()
 	
-	def __str__(self):
+	def __unicode__(self):
 		return self.firstname_en
 	
 	class Meta():
@@ -83,8 +83,7 @@ class Torrent(models.Model):
 	seeds = models.IntegerField()
 	downloadcount = models.IntegerField()
 	
-	
-	def __str__(self):
+	def __unicode__(self):
 		return self.name
 	
 	class Meta():
