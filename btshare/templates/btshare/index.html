@@ -57,7 +57,7 @@
 				<tr>
 					<td>{{item.type}}</td>
 					<td><a href="{{ mylink}}">{{item.name}}</a></td>
-					<td>{{item.addedtime}}</td>
+					<td>{{item.addedtime | date:"Y-m-d H:i:s" }}</td>
 					<td>{{item.filesize}}</td>
 					<td>{{item.seeds}}</td>
 					<td>{{item.leeders}}</td>
