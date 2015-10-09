@@ -12,6 +12,9 @@ def index(request):
 	list = Torrent.objects.order_by('torrentid')
 	
 	
-	context = RequestContext(request,{'list':list})
+	context = RequestContext(request,{'list':list,'mylink':'http://127.0.0.1:8000/justdoit/'})
 	
 	return HttpResponse(template.render(context))
+	
+def doit(request):
+	return HttpResponse("just do it!")
