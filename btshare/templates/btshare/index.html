@@ -45,10 +45,10 @@
 				<tr>
 					<th>类别</th>
 					<th>种子</th>
-					<th>加入时间</th>
+					<th>更新时间</th>
 					<th>文件大小</th>
 					<th>Seeds</th>
-					<th>Leeders</th>
+					<th>Leechers</th>
 					<th>上传者</th>
 				</tr>
 			</thead>
@@ -56,7 +56,7 @@
 				{% for item in list %}
 				<tr>
 					<td>{{item.type}}</td>
-					<td>{{item.name}}</td>
+					<td><a href="#">{{item.name}}</a></td>
 					<td>{{item.addedtime}}</td>
 					<td>{{item.filesize}}</td>
 					<td>{{item.seeds}}</td>

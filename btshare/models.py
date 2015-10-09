@@ -59,9 +59,9 @@ class People(models.Model):
 	firstname_en = models.CharField(max_length=30)
 	middlename_en = models.CharField(max_length=30)
 	lastname_en = models.CharField(max_length=30)
-	firstname_cn = models.CharField(max_length=30)
-	middlename_cn = models.CharField(max_length=30)
-	lastname_cn = models.CharField(max_length=30)
+	# firstname_cn = models.CharField(max_length=30)
+	# middlename_cn = models.CharField(max_length=30)
+	# lastname_cn = models.CharField(max_length=30)
 	borndate = models.DateField()
 	summary = models.TextField()
 	
@@ -133,5 +133,13 @@ class Movie_People(models.Model):
 	
 	class Meta():
 		db_table = "Movie_People"
-		
+
+class Movie_Torrent(models.Model):
+	Movie_Torrentid = models.AutoField(primary_key=True)
+	movieid = models.ForeignKey(Movie,db_column='movieid')
+	torrentid = models.ForeignKey(Torrent,db_column='torrentid')
+	
+	class Meta():
+		db_table = 'Movie_Torrent'
+
 
