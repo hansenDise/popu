@@ -95,6 +95,9 @@ class ScreenShot(models.Model):
 	movieid = models.ForeignKey(Movie,db_column='movieid')
 	picurl = models.CharField(max_length=300)
 	
+	def __unicode__(self):
+		return self.picurl
+	
 	class Meta():
 		db_table="ScreenShot"
 

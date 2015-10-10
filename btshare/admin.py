@@ -12,6 +12,7 @@ from .models import Subtitle
 from .models import Trailer
 from .models import Movie_Genres
 from .models import Movie_People
+from .models import ScreenShot
 
 
 admin.site.register(Occupation)
@@ -24,3 +25,4 @@ admin.site.register(Subtitle)
 admin.site.register(Trailer)
 admin.site.register(Movie_Genres)
 admin.site.register(Movie_People)
+admin.site.register(ScreenShot)

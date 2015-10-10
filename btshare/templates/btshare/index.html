@@ -3,14 +3,13 @@
 {% block style %}
 		.sperade	{
 			height:10px;
-			
 			margin-top:30px;
 		}
 		.col-lg-1	{
 			width:152px;
 		}
 		thead	{
-			background-color:#742894;
+			background-color:#d89b04;
 			color:#fff;
 		}	
 		.pagination	{
@@ -20,7 +19,9 @@
 		.noborder	{
 			border:0;
 		}
-
+        tbody {
+        background-color:#d4dcea;}
+        body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
 {% endblock %}
 
 {% block content %}
@@ -40,16 +41,15 @@
 		
 		<div class="sperade"></div>
 		
-		<table class="table table-noborder">
-			<thead>
+		<table class="table table-hover">
+			<thead align="center">
 				<tr>
-					<th>类别</th>
-					<th>种子</th>
-					<th>更新时间</th>
-					<th>文件大小</th>
-					<th>Seeds</th>
-					<th>Leechers</th>
-					<th>上传者</th>
+					<td>类别</td>
+					<td>种子</td>
+					<td>更新时间</td>
+					<td>文件大小</td>
+					<td>Seeds</td>
+					<td>Leechers</td>
 				</tr>
 			</thead>
 			<tbody>
@@ -61,9 +61,17 @@
 					<td>{{item.filesize}}</td>
 					<td>{{item.seeds}}</td>
 					<td>{{item.leeders}}</td>
-					<td>{{item.uploader}}</td>
 				</tr>
-				{% endfor %}	
+                {% endfor %}
+                <tr>
+					<td width="5%">{{item.type}}</td>
+					<td width="52%"><a href="/torrent/1">item.name</a></td>
+					<td width="16%">2015-10-10 15:56:23</td>
+					<td width="8%">item.filesize}}</td>
+					<td width="8%">item.seeds}}</td>
+					<td width="8%">item.leeders}}</td>
+				</tr>
+					
 			</tbody>
 		</table>
 		

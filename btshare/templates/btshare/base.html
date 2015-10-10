@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	{% load staticfiles %}
-	
     <link href="{% static 'btshare/css/bootstrap.min.css' %}" rel="stylesheet">		    	
     <title>{% block title %}popu {% endblock %}</title>
     <!--[if lt IE 9]>
@@ -37,10 +36,34 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li ><a href="#">首页</a></li>
-					<li class="active"> <a href="#">电影<span class="label label-success">+187</span></a></li>
-					<li> <a href="#">美剧<span class="label label-success">+58</span></a></li>
-					<li> <a href="#">游戏<span class="label label-success">+186</span></a></li>
-					<li> <a href="#">消息<span class="label label-success">+288</span></a></li>
+					<li class="active"> 
+                        <a href="#">电影
+                            {% if movie_inc %}
+                            <span class="label label-success">+{{movie_inc}}</span>
+                            {% endif %}
+                        </a>
+                    </li>
+					<li> 
+                        <a href="#">美剧
+                            {% if tv_inc %}
+                            <span class="label label-success">+{{tv_inc}}</span>
+                            {% endif %}
+                        </a>
+                    </li>
+					<li> 
+                        <a href="#">游戏
+                            {% if game_inc %}
+                            <span class="label label-success">+{{game_inc}}</span>
+                            {% endif %}
+                        </a>
+                    </li>
+					<li> 
+                        <a href="#">消息
+                            {% if msg_inc %}
+                            <span class="label label-success">+{{msg_inc}}</span>
+                            {% endif %}
+                        </a>
+                    </li>
 				</ul>
 			</div>
 		</div>
@@ -51,7 +74,7 @@
 	</div>
 
 
-  	<script src="{% static 'btresource/js/jquery.min.js' %}"></script>
-  	<script src="{% static 'btresource/js/bootstrap.min.js' %}"></script>
+  	<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="{% static 'btshare/js/bootstrap.min.js' %}"></script>
   </body>
 </html>
