@@ -4,4 +4,5 @@ import views
 urlpatterns = patterns('',
 	url(r'^$',views.index),
 	url(r'^justdoit/$',views.doit),
+	url(r'^torrent/(\d+)/$',views.torrent_detail),
 )

@@ -56,7 +56,7 @@
 				{% for item in list %}
 				<tr>
 					<td>{{item.type}}</td>
-					<td><a href="{{ mylink}}">{{item.name}}</a></td>
+					<td><a href="http://127.0.0.1:8000/torrent/{{item.torrentid}}">{{item.name}}</a></td>
 					<td>{{item.addedtime | date:"Y-m-d H:i:s" }}</td>
 					<td>{{item.filesize}}</td>
 					<td>{{item.seeds}}</td>
