@@ -55,23 +55,14 @@
 			<tbody>
 				{% for item in list %}
 				<tr>
-					<td>{{item.type}}</td>
-					<td><a href="http://127.0.0.1:8000/torrent/{{item.torrentid}}">{{item.name}}</a></td>
-					<td>{{item.addedtime | date:"Y-m-d H:i:s" }}</td>
-					<td>{{item.filesize}}</td>
-					<td>{{item.seeds}}</td>
-					<td>{{item.leeders}}</td>
+					<td width="5%">{{item.type}}</td>
+					<td width="52%"><a href="http://127.0.0.1:8000/torrent/{{item.torrentid}}">{{item.name}}</a></td>
+					<td width="16%>{{item.addedtime | date:"Y-m-d H:i:s" }}</td>
+					<td width="8%">{{item.filesize}}</td>
+					<td width="8%">{{item.seeds}}</td>
+					<td width="8%">{{item.leeders}}</td>
 				</tr>
                 {% endfor %}
-                <tr>
-					<td width="5%">{{item.type}}</td>
-					<td width="52%"><a href="/torrent/1">item.name</a></td>
-					<td width="16%">2015-10-10 15:56:23</td>
-					<td width="8%">item.filesize}}</td>
-					<td width="8%">item.seeds}}</td>
-					<td width="8%">item.leeders}}</td>
-				</tr>
-					
 			</tbody>
 		</table>
 		
