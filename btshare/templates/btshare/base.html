@@ -17,6 +17,13 @@
 			margin-left:10px;
 			padding-left:6px;
 		}
+        .footer{
+          padding:40px 0;
+          color: #999;
+          text-align: center;
+          border-top: 1px solid #e5e5e5;
+          clear:both;
+        }
 		{% block style %}
 		{% endblock %}
 	</style>
@@ -69,11 +76,17 @@
 		</div>
 	</nav>
 	
-	<div class="container">
-		{%block content %} {% endblock %}
-	</div>
-
-
+	{%block content %} {% endblock %}
+    
+    <div class="container-fluid">
+        <footer class="footer">
+          <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+          <p>
+            <a href="#">Back to top</a>
+          </p>
+        </footer>
+    </div>
+    
   	<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
   	<script src="{% static 'btshare/js/bootstrap.min.js' %}"></script>
   </body>
