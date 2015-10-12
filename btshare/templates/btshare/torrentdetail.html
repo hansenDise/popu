@@ -1,15 +1,32 @@
 {% extends "btshare/base.html" %}
 
+{% block style %}
+    body {
+            padding-top:70px;
+        }
+    .lefttd{
+        width:80px;
+        background-color:#999;
+    }
+{% endblock %}
+
 {% block content %}
-    <div class="starter-template">
-        <br><br><br><br><br>
+    <div class="container">
         <p>this is the torrent detail page .  torrentid is : {{ torrentid }}</p>
         
-        <!--
-        {% load staticfiles %}
-        <img src="{%static 'btshare/images/'%}{{posterurl}}.jpg" >      <br>
-        <img src="{%static 'btshare/images/'%}{{screenurl1}}.jpg">      <br>
-        <img src="{%static 'btshare/images/'%}{{screenurl2}}.jpg">      <br>
-        -->
+        <div class="movietable">
+            <table class="">
+                <tr>
+                    <td class="lefttd"><a href="#">下载</a></td>
+                    <td>
+                        
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+        
     </div>
+    
+    
 {% endblock %}
