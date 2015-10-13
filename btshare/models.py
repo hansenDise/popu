@@ -92,7 +92,7 @@ class Torrent(models.Model):
 #截屏
 class ScreenShot(models.Model):
 	screenshotid = models.AutoField(primary_key=True)
-	movieid = models.ForeignKey(Movie,db_column='movieid')
+	torrentid = models.ForeignKey(Torrent,db_column='torrentid')
 	picurl = models.CharField(max_length=300)
 	
 	def __unicode__(self):
