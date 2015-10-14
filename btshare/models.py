@@ -38,7 +38,6 @@ class Genres(models.Model):
 #电影
 class Movie(models.Model):
 	movieid = models.AutoField(primary_key=True)
-	categoryid = models.ForeignKey(Category,db_column='categoryid')
 	title = models.CharField(max_length=200)
 	year = models.IntegerField()
 	imdburl = models.CharField(max_length=200)
@@ -75,6 +74,7 @@ class People(models.Model):
 class Torrent(models.Model):
 	torrentid = models.AutoField(primary_key=True)
 	movieid = models.ForeignKey(Movie,db_column='movieid')
+	categoryid = models.ForeignKey(Category,db_column='categoryid')
 	name = models.CharField(max_length=200)
 	torrenturl = models.CharField(max_length=300)
 	magneturl = models.CharField(max_length=300)
