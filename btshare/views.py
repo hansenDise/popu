@@ -26,5 +26,5 @@ def doit(request):
 def torrent_detail(request,torrentid):
 	btitem = Torrent.objects.get(torrentid=torrentid)
 	movie = btitem.movieid
-	screenurl = ScreenShot.objects.order_by('picurl')[0:3]
+	screenurl = ScreenShot.objects.filter(torrentid=torrentid)
 	return render_to_response('btshare/torrentdetail.html',{'btitem':btitem,'movie':movie,'screenurl':screenurl})

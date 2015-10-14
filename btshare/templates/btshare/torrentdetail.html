@@ -19,34 +19,35 @@
                 <tr>
                     <td class="lefttd">种子</td>
                     <td>
-                        <a href="#">{{ btitem.name }}</a>
+                        <a href="{{btitem.torrenturl}}">{{ btitem.name }}</a>
                     </td>
                 </tr>
                 <tr>
-                    <td class="lefttd">海报</td>
+                    <td>电影:</td>
+                    <td>{{ movie.title}}</td>
+                </tr>
+                <tr>
+                    <td class="lefttd">海报:</td>
                     <td>
                         <img src="{{ movie.posterurl}}" border="0" alt="{{ movie.name}}">
                     </td>
                 </tr>
                 <tr>
-                    <td class="lefttd">截屏</td>
+                    <td class="lefttd">截屏:</td>
                     
                     <td>
                     {% for url in screenurl %}
-                        <img scr="{{url.picurl}}" border="0">
+                        <img src="{{url.picurl}}" border="0">
                     {% endfor %}
                     </td>
                 </tr>
+                
                 <tr>
-                    <td>名称</td>
-                    <td>{{ movie.title}}</td>
-                </tr>
-                <tr>
-                    <td>年代</td>
+                    <td class="lefttd">年代:</td>
                     <td>{{movie.year}}</td>
                 </tr>
                 <tr>
-                    <td>时长</td>
+                    <td class="lefttd">时长:</td>
                     <td>{{ movie.runtime}}</td>
                 </tr>
             </table>
