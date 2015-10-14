@@ -25,8 +25,8 @@
                 {% for btitem in btlist %}
                 <tr>
                     <td>{{ btitem.category }}</td>
-                    <td>{{ btitem.name }}</td>
-                    <td>{{ btitem.addedtime }}</td>
+                    <td><a href="/torrent/{{btitem.torrentid}}">{{ btitem.name }}</a></td>
+                    <td>{{ btitem.addedtime | date:"Y-m-d H:i:s"}}</td>
                     <td>{{ btitem.filesize }}</td>
                     <td>{{ btitem.seeds }}</td>
                 </tr>
@@ -40,11 +40,9 @@
                             <span aria-hidden="true">&laquo;</span>
                           </a>
                         </li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
+                        {% for i in pages %}
+                        <li><a href="#">{{i}}</a></li>
+                        {% endfor %}
                         <li>
                           <a href="#" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
