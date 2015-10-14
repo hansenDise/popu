@@ -22,103 +22,15 @@
                     <td>Seeds</td>
                     <td>Leechers</td>
                 </tr>
-                
+                {% for btitem in btlist %}
                 <tr>
-                    <td>类别</td>
-                    <td>种子</td>
-                    <td>更新时间</td>
-                    <td>文件大小</td>
-                    <td>Seeds</td>
-                    <td>Leechers</td>
+                    <td>{{ btitem.category }}</td>
+                    <td>{{ btitem.name }}</td>
+                    <td>{{ btitem.addedtime }}</td>
+                    <td>{{ btitem.filesize }}</td>
+                    <td>{{ btitem.seeds }}</td>
                 </tr>
-                <tr>
-                    <td>类别</td>
-                    <td>种子</td>
-                    <td>更新时间</td>
-                    <td>文件大小</td>
-                    <td>Seeds</td>
-                    <td>Leechers</td>
-                </tr>
-                <tr>
-                    <td>类别</td>
-                    <td>种子</td>
-                    <td>更新时间</td>
-                    <td>文件大小</td>
-                    <td>Seeds</td>
-                    <td>Leechers</td>
-                </tr>
-                <tr>
-                    <td>类别</td>
-                    <td>种子</td>
-                    <td>更新时间</td>
-                    <td>文件大小</td>
-                    <td>Seeds</td>
-                    <td>Leechers</td>
-                </tr>
-                <tr>
-                    <td>类别</td>
-                    <td>种子</td>
-                    <td>更新时间</td>
-                    <td>文件大小</td>
-                    <td>Seeds</td>
-                    <td>Leechers</td>
-                </tr>
-                <tr>
-                    <td>类别</td>
-                    <td>种子</td>
-                    <td>更新时间</td>
-                    <td>文件大小</td>
-                    <td>Seeds</td>
-                    <td>Leechers</td>
-                </tr>
-                <tr>
-                    <td>类别</td>
-                    <td>种子</td>
-                    <td>更新时间</td>
-                    <td>文件大小</td>
-                    <td>Seeds</td>
-                    <td>Leechers</td>
-                </tr>
-                <tr>
-                    <td>类别</td>
-                    <td>种子</td>
-                    <td>更新时间</td>
-                    <td>文件大小</td>
-                    <td>Seeds</td>
-                    <td>Leechers</td>
-                </tr>
-                <tr>
-                    <td>类别</td>
-                    <td>种子</td>
-                    <td>更新时间</td>
-                    <td>文件大小</td>
-                    <td>Seeds</td>
-                    <td>Leechers</td>
-                </tr>
-                <tr>
-                    <td>类别</td>
-                    <td>种子</td>
-                    <td>更新时间</td>
-                    <td>文件大小</td>
-                    <td>Seeds</td>
-                    <td>Leechers</td>
-                </tr>
-                <tr>
-                    <td>类别</td>
-                    <td>种子</td>
-                    <td>更新时间</td>
-                    <td>文件大小</td>
-                    <td>Seeds</td>
-                    <td>Leechers</td>
-                </tr>
-                <tr>
-                    <td>类别</td>
-                    <td>种子</td>
-                    <td>更新时间</td>
-                    <td>文件大小</td>
-                    <td>Seeds</td>
-                    <td>Leechers</td>
-                </tr>
+                {% endfor %}
             </table>
             <div class="pages">
                 <nav>
