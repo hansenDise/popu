@@ -5,7 +5,7 @@
 #职业表
 class Occupation(models.Model):
 	occupationid = models.AutoField(primary_key=True)
-	occupationname = models.CharField(max_length=20)
+	occupationname = models.CharField(max_length=20,null=True)
 	
 	def __unicode__(self):
 		return self.occupationname
@@ -16,7 +16,7 @@ class Occupation(models.Model):
 #类别
 class Category(models.Model):
 	categoryid = models.AutoField(primary_key=True)
-	categoryname = models.CharField(max_length=50)
+	categoryname = models.CharField(max_length=50,null=True)
 	
 	def __unicode__(self):
 		return self.categoryname
@@ -27,7 +27,7 @@ class Category(models.Model):
 #类型
 class Genres(models.Model):
 	genresid = models.AutoField(primary_key=True)
-	genresname = models.CharField(max_length=20)
+	genresname = models.CharField(max_length=20,null=True)
 	
 	def __unicode__(self):
 		return self.genresname
@@ -39,11 +39,11 @@ class Genres(models.Model):
 class Movie(models.Model):
 	movieid = models.AutoField(primary_key=True)
 	title = models.CharField(max_length=200)
-	year = models.IntegerField()
-	imdburl = models.CharField(max_length=200)
-	posterurl = models.CharField(max_length=300)
-	runtime = models.IntegerField()
-	plot = models.TextField()
+	year = models.IntegerField(null=True)
+	imdburl = models.CharField(max_length=200,null=True)
+	posterurl = models.CharField(max_length=300,null=True)
+	runtime = models.IntegerField(null=True)
+	plot = models.TextField(null=True)
 	
 	def __unicode__(self):
 		return self.title
@@ -55,14 +55,14 @@ class Movie(models.Model):
 class People(models.Model):
 	peopleid = models.AutoField(primary_key=True)
 	occupationid = models.ForeignKey(Occupation,db_column='occupationid')
-	firstname_en = models.CharField(max_length=30)
-	middlename_en = models.CharField(max_length=30)
-	lastname_en = models.CharField(max_length=30)
+	firstname_en = models.CharField(max_length=30,null=True)
+	middlename_en = models.CharField(max_length=30,null=True)
+	lastname_en = models.CharField(max_length=30,null=True)
 	# firstname_cn = models.CharField(max_length=30)
 	# middlename_cn = models.CharField(max_length=30)
 	# lastname_cn = models.CharField(max_length=30)
-	borndate = models.DateField()
-	summary = models.TextField()
+	borndate = models.DateField(null=True)
+	summary = models.TextField(null=True)
 	
 	def __unicode__(self):
 		return self.firstname_en
@@ -76,12 +76,12 @@ class Torrent(models.Model):
 	movieid = models.ForeignKey(Movie,db_column='movieid')
 	categoryid = models.ForeignKey(Category,db_column='categoryid')
 	name = models.CharField(max_length=200)
-	torrenturl = models.CharField(max_length=300)
-	magneturl = models.CharField(max_length=300)
-	filesize = models.CharField(max_length=20)
+	torrenturl = models.CharField(max_length=300,null=True)
+	magneturl = models.CharField(max_length=300,null=True)
+	filesize = models.CharField(max_length=20,null=True)
 	addedtime = models.DateTimeField()
-	seeds = models.IntegerField()
-	downloadcount = models.IntegerField()
+	seeds = models.IntegerField(null=True)
+	downloadcount = models.IntegerField(null=True)
 	
 	def __unicode__(self):
 		return self.name
@@ -93,7 +93,7 @@ class Torrent(models.Model):
 class ScreenShot(models.Model):
 	screenshotid = models.AutoField(primary_key=True)
 	torrentid = models.ForeignKey(Torrent,db_column='torrentid')
-	picurl = models.CharField(max_length=300)
+	picurl = models.CharField(max_length=300,null=True)
 	
 	def __unicode__(self):
 		return self.picurl
@@ -105,7 +105,7 @@ class ScreenShot(models.Model):
 class Subtitle(models.Model):
 	subtitleid = models.AutoField(primary_key=True)
 	movieid = models.ForeignKey(Movie,db_column='movieid')
-	fileurl = models.CharField(max_length=300)
+	fileurl = models.CharField(max_length=300,null=True)
 	
 	class Meta():
 		db_table = "Subtitle"
@@ -114,7 +114,7 @@ class Subtitle(models.Model):
 class Trailer(models.Model):
 	trailerid = models.AutoField(primary_key=True)
 	movieid = models.ForeignKey(Movie,db_column='movieid')
-	trailerurl = models.CharField(max_length=300)
+	trailerurl = models.CharField(max_length=300,null=True)
 	
 	class Meta():
 		db_table = "Trailer"
