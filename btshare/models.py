@@ -39,6 +39,7 @@ class Genres(models.Model):
 class Movie(models.Model):
 	movieid = models.AutoField(primary_key=True)
 	title = models.CharField(max_length=200)
+	cn_title = models.CharField(max_length=200,null=True)
 	year = models.IntegerField(null=True)
 	imdburl = models.CharField(max_length=200,null=True)
 	posterurl = models.CharField(max_length=300,null=True)
