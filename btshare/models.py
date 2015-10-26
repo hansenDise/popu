@@ -77,6 +77,7 @@ class Torrent(models.Model):
 	movieid = models.ForeignKey(Movie,db_column='movieid')
 	categoryid = models.ForeignKey(Category,db_column='categoryid')
 	name = models.CharField(max_length=200)
+	shacode = models.CharField(max_length=40)
 	torrenturl = models.CharField(max_length=300,null=True)
 	magneturl = models.CharField(max_length=300,null=True)
 	filesize = models.CharField(max_length=20,null=True)
